@@ -13,3 +13,7 @@ export LDAP_BASE_DN="o=epfl,c=ch"
 
 ##How test
 pytest
+
+pytest --cov=epflutils
+
+tox

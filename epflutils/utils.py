@@ -1,40 +1,11 @@
 """(c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017"""
 import ldap3
-import logging
-import os
-
-
-def get_optional_env(key, default):
-    """
-    Return the value of an optional environment variable, and use
-    the provided default if it's not set.
-    """
-    if not os.environ.get(key):
-        logging.warning("The optional environment variable %s is not set, using '%s' as default" % (key, default))
-
-    return os.environ.get(key, default)
-
-
-def get_mandatory_env(key):
-    """
-    Return the value of a mandatory environment variable, and raise an
-    Execption if it's not set.
-    """
-    if not os.environ.get(key):
-        msg = "The mandatory environment variable {} is not set".format(key)
-        logging.error(msg)
-        raise Exception(msg)
-
-    return os.environ.get(key)
 
 
 def _get_LDAP_connection():
     """
     Return a LDAP connection
     """
-    #ldap_server = get_mandatory_env('LDAP_SERVER_FOR_SEARCH')
-    #ldap_base = get_mandatory_env('LDAP_BASE_DN')
-
     ldap_server = 'ldap.epfl.ch'
     ldap_base = "o=epfl,c=ch"
 
@@ -127,7 +98,7 @@ def get_sciper(username):
 
 def get_username(sciper):
     """
-    return username of user
+    Return username of user
     """
     attribute = 'uid'
     response = LDAP_search(
