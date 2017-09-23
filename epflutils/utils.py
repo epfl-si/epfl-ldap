@@ -43,7 +43,7 @@ def is_unit_exist(unit_id):
 
     try:
         return 'EPFLorganizationalUnit' in response[0]['attributes'][attribute]
-    except Exception as error:
+    except Exception:
         return False
 
 
