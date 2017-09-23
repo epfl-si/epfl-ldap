@@ -2,3 +2,4 @@
 -r _base.txt
 
 ldap==1.0.2
+mock==2.0.0
