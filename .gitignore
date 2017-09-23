@@ -1,0 +1,5 @@
+.tox/
+.cache/
+.idea/
+epfl_utils.egg-info/
+*.pyc

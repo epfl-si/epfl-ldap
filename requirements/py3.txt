@@ -1,0 +1,4 @@
+# Import Base Requirements
+-r _base.txt
+
+ldap3==2.3
