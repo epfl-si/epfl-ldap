@@ -13,7 +13,7 @@ def test_authenticate():
 
     # Success test
     auth = Authenticator()
-    username = 'charmier'
+    username = get_optional_env('TEST_CORRECT_USERNAME')
     password = get_optional_env('TEST_CORRECT_PWD')
     assert auth.authenticate(username=username, password=password)
 

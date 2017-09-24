@@ -5,4 +5,5 @@ CONSTANTS = {
     "LDAP_BASE_DN": "o=epfl,c=ch",
     "LDAP_USE_SSL": True,
     "LDAP_USER_SEARCH_ATTR": "uid",
+    "TEST_CORRECT_USERNAME": "kermit",
 }

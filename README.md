@@ -39,9 +39,14 @@ pip install epfl-utils
 
 ## How test
 
-To run tests in your current python version :
+To run tests locally :
 ```
 pytest
+```
+> You must create enviroment variables for authenticate 
+``` 
+export TEST_CORRECT_USERNAME=kermit
+export TEST_CORRECT_PWD=xxxxxx
 ```
 
 To run tests with coverage in your current python version :
