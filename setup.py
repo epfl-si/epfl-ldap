@@ -5,7 +5,7 @@ import epflutils
 
 
 # Get the long description from the README file
-with open(path.join(path.abspath(path.dirname(__file__)), 'README.md')) as f:
+with open('README.md') as f:
     long_description = f.read()
 
 
