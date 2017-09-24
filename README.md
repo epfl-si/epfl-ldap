@@ -20,6 +20,7 @@
 epfl-utils is an amazing toolkit that provides basics functionalities to EPFL
 
 * LDAP search
+* LDAP authenticate
 * etc
 
 ## License
@@ -32,14 +33,8 @@ Python (2.7, 3.5)
 
 ## Installation
 
-First create a virtualenv wrapper : 
 ```
-mkvirtualenv epfl-utils-python27
-```
-
-Install requirements : 
-```
-pip install -r requirements/py2.txt
+pip install epfl-utils
 ```
 
 ## How test
@@ -66,6 +61,23 @@ To check if the python code is PEP8 compliant :
 flake8 --max-line-length=120
 ```
 
+## How to publish a new version
+
+* Update the CHANGELOG.md file
+* Update the version of this package. See __init__.py file
+* Generate a new distribution
+```
+python setup.py sdist
+```
+a new *.tar.gz file is created in dist/
+* Test this new version
+* Push all changes on github (with tests, docs, etc)
+* Publish this new version on pypi
+```
+twine upload dist/*
+```
+
+
 ## TODO 
 
 - [x] Config flake8 to check PEP8
@@ -74,10 +86,10 @@ flake8 --max-line-length=120
 - [x] Config tox to support many python versions
 - [x] Config mock tests
 - [x] Config travis CI
+- [ ] Write doc and publish it on http://docs.readthedocs.io
 - [x] LDAP search
     - [x] Define CONSTANTS
         - [x] ldap_server = 'ldap.epfl.ch'
         - [x] ldap_base = "o=epfl,c=ch"
     - [x] User can define environment variable to override constants
-    - [x] Test ldap and scoldap  
-- [ ] LDAP authenticate
+- [x] LDAP authenticate

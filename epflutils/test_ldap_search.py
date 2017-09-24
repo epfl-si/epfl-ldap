@@ -1,4 +1,5 @@
-from epflutils.utils import get_username, get_sciper, get_units, is_unit_exist, get_unit_name
+"""(c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017"""
+from epflutils.ldap_search import get_username, get_sciper, get_units, is_unit_exist, get_unit_name
 
 
 def test_get_sciper():
