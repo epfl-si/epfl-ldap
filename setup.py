@@ -4,10 +4,12 @@ from setuptools import find_packages, setup
 import epflutils
 
 
-# Get the long description from the README file
-with open('README.md') as f:
-    long_description = f.read()
-
+try:
+    # Get the long description from the README file
+    with open('README.md') as f:
+        long_description = f.read()
+except:
+    long_description = "See README file"
 
 setup(
     name='epfl-utils',
