@@ -4,3 +4,4 @@
 epfl_utils.egg-info/
 *.pyc
 .coverage
+dist/

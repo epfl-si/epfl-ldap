@@ -1,7 +1,7 @@
 try:
-    from mock import patch, MagicMock
-except:
     from unittest.mock import MagicMock, patch
+except:
+    from mock import patch, MagicMock
 
 
 @patch('epflutils.utils.get_sciper')

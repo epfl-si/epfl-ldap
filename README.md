@@ -22,6 +22,10 @@ epfl-utils is an amazing toolkit that provides basics functionalities to EPFL
 * LDAP search
 * etc
 
+## License
+
+[MIT license - Copyright (c) EPFL](./LICENSE)
+
 ## Requirements
 
 Python (2.7, 3.5)
@@ -68,10 +72,12 @@ flake8 --max-line-length=120
 - [x] Config pytest 
 - [x] Config pytest with coverage
 - [x] Config tox to support many python versions
+- [x] Config mock tests
 - [x] Config travis CI
-- [ ] LDAP search
-    - [ ] Define CONST 
-        - [ ] ldap_server = 'ldap.epfl.ch'
-        - [ ] ldap_base = "o=epfl,c=ch"
-    - [ ] Test ldap and scoldap  
+- [x] LDAP search
+    - [x] Define CONSTANTS
+        - [x] ldap_server = 'ldap.epfl.ch'
+        - [x] ldap_base = "o=epfl,c=ch"
+    - [x] User can define environment variable to override constants
+    - [x] Test ldap and scoldap  
 - [ ] LDAP authenticate

@@ -1,25 +1,48 @@
 # coding:utf-8
-import os
-import epflutils
+from os import path
 from setuptools import find_packages, setup
+import epflutils
 
 
-# allow setup.py to be run from any path
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+# Get the long description from the README file
+with open(path.join(path.abspath(path.dirname(__file__)), 'README.md')) as f:
+    long_description = f.read()
+
 
 setup(
     name='epfl-utils',
+
     version=epflutils.__version__,
-    packages=find_packages(),
-    include_package_data=True,
-    license="LGPLv3",
+
     description='A simple package to provide tools common to several applications at EPFL.',
-    long_description="",
-    url='https://charmier@git.epfl.ch/repo/epfl-utils.git',
+    long_description=long_description,
+
+    url='https://github.com/epfl-idevelop/epfl-utils',
+
     author='Charmier Grégory',
     author_email='gregory.charmier@epfl.ch',
+
+    license="MIT",
+
+    # https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
+        'Development Status :: 3 - Alpha',
+
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
+
+        'License :: OSI Approved :: MIT License',
+
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
     ],
+
+    keywords='EPFL development LDAPsearch',
+
+    packages=find_packages(),
+
+    install_requires=["ldap==1.0.2", "mock==2.0.0"],
 )

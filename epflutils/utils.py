@@ -1,19 +1,33 @@
 """(c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017"""
+import os
 import ldap3
+
+from epflutils.settings import CONSTANTS
+
+
+def get_optional_env(key):
+    """
+    Return the value of an optional environment variable, and use
+    the provided default if it's not set.
+    """
+    environment_variable_value = os.environ.get(key)
+    if environment_variable_value:
+        return environment_variable_value
+    elif key in CONSTANTS:
+        return CONSTANTS[key]
+    else:
+        raise Exception("The variable {1} is not set".format(key))
 
 
 def _get_LDAP_connection():
     """
     Return a LDAP connection
     """
-    ldap_server = 'ldap.epfl.ch'
-    ldap_base = "o=epfl,c=ch"
-
-    server = ldap3.Server('ldap://' + ldap_server)
+    server = ldap3.Server('ldap://' + get_optional_env('LDAP_SERVER'))
     connection = ldap3.Connection(server)
     connection.open()
 
-    return connection, ldap_base
+    return connection, get_optional_env('LDAP_BASE')
 
 
 def LDAP_search(pattern_search, attribute):
