@@ -73,3 +73,23 @@ def test_get_unit_name(get_unit_name):
 
     unit = get_unit_name(unit_id="13030")
     assert unit.lower() == "idevelop"
+
+
+@patch('epflldap.ldap_authenticate.Authenticator.authenticate')
+def test_authenticate(authenticate):
+
+    mock_authenticate = MagicMock(return_value=True)
+    authenticate.return_value = mock_authenticate()
+
+    # Success test
+    username = "kermit"
+    password = "rightpassword"
+    assert authenticate(username=username, password=password)
+
+    mock_authenticate = MagicMock(return_value=False)
+    authenticate.return_value = mock_authenticate()
+
+    # Success test
+    username = "kermit"
+    password = "badpassword"
+    assert not authenticate(username=username, password=password)

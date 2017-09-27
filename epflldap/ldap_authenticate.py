@@ -6,7 +6,7 @@ from epflldap.utils import get_optional_env
 
 
 class Authenticator:
-    """ Class to authenticate users using LDAP(S) """
+    """ Class to authenticate users using LDAPS """
 
     def __init__(self):
         self.ldap_server = get_optional_env('EPFL_LDAP_SERVER_FOR_AUTHENTICATE')

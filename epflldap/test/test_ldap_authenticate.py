@@ -13,8 +13,8 @@ def test_authenticate():
 
     # Success test
     auth = Authenticator()
-    username = get_optional_env('EPFL_TEST_CORRECT_USERNAME')
-    password = get_optional_env('EPFL_TEST_CORRECT_PWD')
+    username = get_optional_env('EPFL_LDAP_TEST_CORRECT_USERNAME')
+    password = get_optional_env('EPFL_LDAP_TEST_CORRECT_PWD')
     assert auth.authenticate(username=username, password=password)
 
     # Failed test
