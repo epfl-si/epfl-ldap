@@ -1,6 +1,6 @@
 <!-- markdownlint-disable -->
 <h1 align="center" style="margin:1em">
-  epfl-utils
+  epfl-ldap
 </h1>
 
 <h4 align="center">
@@ -8,8 +8,8 @@
 </h4>
 
 <p align="center">
-  <a href="https://travis-ci.org/epfl-idevelop/epfl-utils">
-    <img src="https://travis-ci.org/epfl-idevelop/epfl-utils.svg?branch=master"
+  <a href="https://travis-ci.org/epfl-idevelop/epfl-ldap">
+    <img src="https://travis-ci.org/epfl-idevelop/epfl-ldap.svg?branch=master"
          alt="Travis">
   </a>
 </p>
@@ -17,7 +17,7 @@
 
 ## Overview
 
-epfl-utils is an amazing toolkit that provides basics functionalities to EPFL
+epfl-ldap is an amazing toolkit that provides basics functionalities to EPFL
 
 * LDAP search
 * LDAP authenticate
@@ -34,7 +34,7 @@ Python (2.7, 3.5)
 ## Installation
 
 ```
-pip install epfl-utils
+pip install epfl-ldap
 ```
 
 ## How test
@@ -45,13 +45,13 @@ pytest
 ```
 > You must create enviroment variables for authenticate 
 ``` 
-export TEST_CORRECT_USERNAME=kermit
-export TEST_CORRECT_PWD=xxxxxx
+export EPFL_LDAP_TEST_CORRECT_USERNAME=kermit
+export EPFL_LDAP_TEST_CORRECT_PWD=xxxxxx
 ```
 
 To run tests with coverage in your current python version :
 ```
-pytest --cov=epflutils
+pytest --cov=epflldap
 ```
 
 To run mock tests in all python version : 

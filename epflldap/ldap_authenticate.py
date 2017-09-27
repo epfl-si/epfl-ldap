@@ -2,20 +2,20 @@
 import re
 import ldap3
 
-from epflutils.utils import get_optional_env
+from epflldap.utils import get_optional_env
 
 
 class Authenticator:
     """ Class to authenticate users using LDAP(S) """
 
     def __init__(self):
-        self.ldap_server = get_optional_env('LDAP_SERVER_FOR_AUTHENTICATE')
-        self.protocol = 'ldaps' if get_optional_env('LDAP_USE_SSL') == 'true' else 'ldap'
+        self.ldap_server = get_optional_env('EPFL_LDAP_SERVER_FOR_AUTHENTICATE')
+        self.protocol = 'ldaps' if get_optional_env('EPFL_LDAP_USE_SSL') == 'true' else 'ldap'
 
-        self.use_ssl = True if get_optional_env('LDAP_USE_SSL') == 'true' else False
+        self.use_ssl = True if get_optional_env('EPFL_LDAP_USE_SSL') == 'true' else False
         self.uri = self.protocol + '://' + self.ldap_server
-        self.dn = get_optional_env('LDAP_BASE_DN')
-        self.user_attr = get_optional_env('LDAP_USER_SEARCH_ATTR')
+        self.dn = get_optional_env('EPFL_LDAP_BASE_DN')
+        self.user_attr = get_optional_env('EPFL_LDAP_USER_SEARCH_ATTR')
 
     def get_user_dn(self, username):
         """

@@ -1,7 +1,7 @@
 .tox/
 .cache/
 .idea/
-epfl_utils.egg-info/
+epfl_ldap.egg-info/
 *.pyc
 .coverage
 dist/

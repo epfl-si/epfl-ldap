@@ -1,18 +1,18 @@
 """(c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017"""
 import ldap3
 
-from epflutils.utils import get_optional_env
+from epflldap.utils import get_optional_env
 
 
 def _get_LDAP_connection():
     """
     Return a LDAP connection
     """
-    server = ldap3.Server('ldap://' + get_optional_env('LDAP_SERVER_FOR_SEARCH'))
+    server = ldap3.Server('ldap://' + get_optional_env('EPFL_LDAP_SERVER_FOR_SEARCH'))
     connection = ldap3.Connection(server)
     connection.open()
 
-    return connection, get_optional_env('LDAP_BASE')
+    return connection, get_optional_env('EPFL_LDAP_BASE_DN')
 
 
 def LDAP_search(pattern_search, attribute):

@@ -1,7 +1,7 @@
 """(c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017"""
 import os
 
-from epflutils.settings import CONSTANTS
+from epflldap.settings import CONSTANTS
 
 
 def get_optional_env(key):

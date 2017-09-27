@@ -1,6 +1,6 @@
 # coding:utf-8
 from setuptools import find_packages, setup
-import epflutils
+import epflldap
 
 
 try:
@@ -11,14 +11,14 @@ except:
     long_description = "See README file"
 
 setup(
-    name='epfl-utils',
+    name='epfl-ldap',
 
-    version=epflutils.__version__,
+    version=epflldap.__version__,
 
-    description='A simple package to provide tools common to several applications at EPFL.',
+    description='A simple package to interact with the EPFL LDAP',
     long_description=long_description,
 
-    url='https://github.com/epfl-idevelop/epfl-utils',
+    url='https://github.com/epfl-idevelop/epfl-ldap',
 
     author='Charmier Grégory',
     author_email='gregory.charmier@epfl.ch',
@@ -41,7 +41,7 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
 
-    keywords='EPFL development LDAPsearch',
+    keywords='EPFL development LDAP search authenticate',
 
     packages=find_packages(),
 

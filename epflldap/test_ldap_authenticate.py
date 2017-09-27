@@ -1,6 +1,6 @@
 """(c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017"""
-from epflutils.ldap_authenticate import Authenticator
-from epflutils.utils import get_optional_env
+from epflldap.ldap_authenticate import Authenticator
+from epflldap.utils import get_optional_env
 
 
 def test_get_user_dn():
@@ -13,8 +13,8 @@ def test_authenticate():
 
     # Success test
     auth = Authenticator()
-    username = get_optional_env('TEST_CORRECT_USERNAME')
-    password = get_optional_env('TEST_CORRECT_PWD')
+    username = get_optional_env('EPFL_TEST_CORRECT_USERNAME')
+    password = get_optional_env('EPFL_TEST_CORRECT_PWD')
     assert auth.authenticate(username=username, password=password)
 
     # Failed test
