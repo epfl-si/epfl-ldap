@@ -109,7 +109,7 @@ def get_username(sciper):
 
 def get_email(sciper):
     """
-    Return username of user
+    Return email of user
     """
     attribute = 'mail'
     response = LDAP_search(
