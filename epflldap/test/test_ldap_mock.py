@@ -29,6 +29,18 @@ def test_get_username(get_username):
     assert get_username(sciper="133134") == "kermit"
 
 
+@patch('epflldap.ldap_search.get_email')
+def test_get_email(get_email):
+
+    mock_get_email = MagicMock(return_value="kermit.lagrenouille@epfl.ch")
+    get_email.return_value = mock_get_email()
+    assert get_email(sciper="133134") == "kermit.lagrenouille@epfl.ch"
+
+    mock_get_email = MagicMock(return_value="gregory.charmier@epfl.ch")
+    get_email.return_value = mock_get_email()
+    assert get_email(sciper="188475") == "gregory.charmier@epfl.ch"
+
+
 @patch('epflldap.ldap_search.get_units')
 def test_get_units(get_units):
 

@@ -105,3 +105,15 @@ def get_username(sciper):
         attribute=attribute
     )
     return response[0]['attributes'][attribute][0]
+
+
+def get_email(sciper):
+    """
+    Return username of user
+    """
+    attribute = 'mail'
+    response = LDAP_search(
+        pattern_search='(uniqueIdentifier=' + sciper + ')',
+        attribute=attribute
+    )
+    return response[0]['attributes'][attribute][0]

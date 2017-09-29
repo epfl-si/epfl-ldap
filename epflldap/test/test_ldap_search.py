@@ -1,5 +1,5 @@
 """(c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017"""
-from epflldap.ldap_search import get_username, get_sciper, get_units, is_unit_exist, get_unit_name
+from epflldap.ldap_search import get_username, get_sciper, get_units, is_unit_exist, get_unit_name, get_email
 
 
 def test_get_sciper():
@@ -10,6 +10,11 @@ def test_get_sciper():
 def test_get_username():
     assert get_username(sciper="188475") == "charmier"
     assert get_username(sciper="133134") == "kermit"
+
+
+def test_get_email():
+    assert get_email(sciper="133134") == "kermit.lagrenouille@epfl.ch"
+    assert get_email(sciper="188475") == "gregory.charmier@epfl.ch"
 
 
 def test_get_units():
