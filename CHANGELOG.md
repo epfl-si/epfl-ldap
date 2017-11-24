@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## 0.0.3
+- Add ldap search method 'get_unit_id' by unit_name
+
 ## 0.0.2
 - Add ldap search method 'get_email' by sciper
 
