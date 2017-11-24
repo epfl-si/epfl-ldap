@@ -67,7 +67,6 @@ def get_unit_id(unit_name):
         pattern_search='(cn=' + unit_name + ')',
         attribute=attribute
     )
-    print(response)
     return response[0]['attributes'][attribute][0]
 
 
