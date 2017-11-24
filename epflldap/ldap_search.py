@@ -58,6 +58,19 @@ def get_unit_name(unit_id):
     return response[0]['attributes'][attribute][0]
 
 
+def get_unit_id(unit_name):
+    """
+    Return the unit id to the unit 'unit_name'
+    """
+    attribute = 'uniqueIdentifier'
+    response = LDAP_search(
+        pattern_search='(cn=' + unit_name + ')',
+        attribute=attribute
+    )
+    print(response)
+    return response[0]['attributes'][attribute][0]
+
+
 def get_units(username):
     """
     Return all units of user 'username'
