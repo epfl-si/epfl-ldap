@@ -87,6 +87,22 @@ def test_get_unit_name(get_unit_name):
     assert unit.lower() == "idevelop"
 
 
+@patch('epflldap.ldap_search.get_unit_id')
+def test_get_unit_id(get_unit_id):
+
+    mock_get_unit_id = MagicMock(return_value="13030")
+    get_unit_id.return_value = mock_get_unit_id()
+
+    unit_id = get_unit_id(unit_name="idevelop")
+    assert unit_id == "13030"
+
+    mock_get_unit_id = MagicMock(return_value="13548")
+    get_unit_id.return_value = mock_get_unit_id()
+
+    unit_id = get_unit_id(unit_name="spring")
+    assert unit_id == "13548"
+
+
 @patch('epflldap.ldap_authenticate.Authenticator.authenticate')
 def test_authenticate(authenticate):
 

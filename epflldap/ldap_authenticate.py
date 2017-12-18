@@ -21,7 +21,6 @@ class Authenticator:
         """
         Get the user distinguished name (dn)
         """
-
         server = ldap3.Server('ldap://' + self.ldap_server)
         connection = ldap3.Connection(server)
         connection.open()

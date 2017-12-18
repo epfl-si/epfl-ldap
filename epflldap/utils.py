@@ -4,6 +4,10 @@ import os
 from epflldap.settings import CONSTANTS
 
 
+class EpflLdapException(Exception):
+    pass
+
+
 def get_optional_env(key):
     """
     Return the value of an optional environment variable, and use
