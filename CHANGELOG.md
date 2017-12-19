@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## 0.0.5
+- Fix bug in get_unit_id method
+- Improve exceptions management
+
 ## 0.0.4
 - Remove print() debug
 
