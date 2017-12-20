@@ -14,7 +14,7 @@ class Authenticator:
 
         self.use_ssl = True if get_optional_env('EPFL_LDAP_USE_SSL') == 'true' else False
         self.uri = self.protocol + '://' + self.ldap_server
-        self.dn = get_optional_env('EPFL_LDAP_BASE_DN')
+        self.dn = get_optional_env('EPFL_LDAP_BASE_DN_FOR_AUTHENTICATE')
         self.user_attr = get_optional_env('EPFL_LDAP_USER_SEARCH_ATTR')
 
     def get_user_dn(self, username):

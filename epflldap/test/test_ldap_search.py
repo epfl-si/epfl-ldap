@@ -62,6 +62,19 @@ def test_get_units():
 def test_is_unit_exist():
     # Success
     assert is_unit_exist(unit_id="13030")
+    assert is_unit_exist(unit_id="13548")
+    assert is_unit_exist(unit_id="12493")
+    assert is_unit_exist(unit_id="13031")
+    assert is_unit_exist(unit_id="13029")
+    assert is_unit_exist(unit_id="12634")
+    assert is_unit_exist(unit_id="12922")
+    assert is_unit_exist(unit_id="10426")
+    assert is_unit_exist(unit_id="13471")
+    assert is_unit_exist(unit_id="13548")
+    assert is_unit_exist(unit_id="13565")
+    assert is_unit_exist(unit_id="12922")
+    assert is_unit_exist(unit_id="12634")
+
     # Fail
     assert not is_unit_exist(unit_id="88")
 
@@ -74,6 +87,33 @@ def test_get_unit_name():
     unit = get_unit_name(unit_id="13548")
     assert unit.lower() == "spring"
 
+    unit = get_unit_name(unit_id="12493")
+    assert unit == "tunes"
+
+    unit = get_unit_name("13031")
+    assert unit == "ideving"
+
+    unit_name = get_unit_name("13029")
+    assert unit_name == "idevam"
+
+    unit_name = get_unit_name("12634")
+    assert unit_name == "dcsl"
+
+    unit_name = get_unit_name("12922")
+    assert unit_name == "scitas"
+
+    unit_name = get_unit_name("13565")
+    assert unit_name == "lpbs"
+
+    unit_name = get_unit_name("13471")
+    assert unit_name == "flexlab"
+
+    unit_name = get_unit_name("10426")
+    assert unit_name == "lca1"
+
+    unit_name = get_unit_name("12637")
+    assert unit_name == "vpsi"
+
     # Fail
     with pytest.raises(
             EpflLdapException,
@@ -83,11 +123,41 @@ def test_get_unit_name():
 
 def test_get_unit_id():
     # Success
+    unit_id = get_unit_id("IDEVELOP")
+    assert unit_id == "13030"
+
     unit_id = get_unit_id("idevelop")
     assert unit_id == "13030"
 
-    unit_id = get_unit_id("spring")
+    unit_id = get_unit_id("IDEVING")
+    assert unit_id == "13031"
+
+    unit_id = get_unit_id("IDEVAM")
+    assert unit_id == "13029"
+
+    unit_id = get_unit_id("DCSL")
+    assert unit_id == "12634"
+
+    unit_id = get_unit_id("SCITAS")
+    assert unit_id == "12922"
+
+    unit_id = get_unit_id("LPBS")
+    assert unit_id == "13565"
+
+    unit_id = get_unit_id("SPRING")
     assert unit_id == "13548"
+
+    unit_id = get_unit_id("TUNES")
+    assert unit_id == "12493"
+
+    unit_id = get_unit_id("FLEXLAB")
+    assert unit_id == "13471"
+
+    unit_id = get_unit_id("LCA1")
+    assert unit_id == "10426"
+
+    unit_id = get_unit_id("VPSI")
+    assert unit_id == "12637"
 
     # Fail
     with pytest.raises(
